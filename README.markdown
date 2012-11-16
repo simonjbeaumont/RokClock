@@ -43,6 +43,18 @@ The program can be compiled with
 Since the program is written in Java, it should compile and run on many
 platforms.
 
+### 3.1 Compiling for distribution ###
+Software required:
+
+- Unix <-> DOS converter (aptitude package: `tofrodos`),
+- Markdown to HTML converter (aptitude package: `markdown`).
+
+The distribution can be compiled with
+
+    ant dist
+
+This will produce the distribution in `dist/RokClock` and zip it into `dist/RokClock.zip`.
+
 ## 4 Setting up the program ##
 The configuration for the program is located in the `config.txt` file. (If
 `config.txt` does not exist when the program is started, it is copied from
