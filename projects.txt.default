@@ -3,7 +3,7 @@
 # 	sub_project[{tooltip}]
 # 		sub_sub_project[{tooltip}]
 
-PRJ{Delivery projects—Project management, documentaton and defect fixing for this project}
+PRJ{Delivery projects: Project management, documentaton and defect fixing for this project}
 	TAL{Tallahassee}
 	CLR{Clearwater}
 	BWD{Borehamwood}
@@ -11,10 +11,10 @@ PRJ{Delivery projects—Project management, documentaton and defect fixing for t
 	TLN{Tampa localisation}
 	SAR{Sarasota}
 		CA-xxxxx{Logging of a specific ticket}
-TEC{Technology—Front end, pre-project activities; e.g. reasearch and analysis, TDP, OSS, RQA}
-LCM{Life cycle maintenance—Customer escalation tickets (SCTX) and Hotfixes (HFX)}
-OPR{Operations—On-going operational activities; e.g. trunk management, triage, defect coordination, QA and Dev lab operations}
-IMP{Improvement—Trunk defect fixing, developer test, change initiatives and exploratory tests}
-MGT{Management—Personal- and line-management, training, team meetings and breifings etc.}
-PTR{Partner engineering—HCL, Openstack and all non-Citrix partners}
-TMO{Time out of the office—Annual leave, sick leave, business travel, GDI etc.}
+TEC{Technology: Front end, pre-project activities; e.g. reasearch and analysis, TDP, OSS, RQA}
+LCM{Life cycle maintenance: Customer escalation tickets (SCTX) and Hotfixes (HFX)}
+OPR{Operations: On-going operational activities; e.g. trunk management, triage, defect coordination, QA and Dev lab operations}
+IMP{Improvement: Trunk defect fixing, developer test, change initiatives and exploratory tests}
+MGT{Management: Personal- and line-management, training, team meetings and breifings etc.}
+PTR{Partner engineering: HCL, Openstack and all non-Citrix partners}
+TMO{Time out of the office: Annual leave, sick leave, business travel, GDI etc.}
