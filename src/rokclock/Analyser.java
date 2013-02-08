@@ -13,6 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.Arrays;
 
 /**
  * The analyser of the log files. It currently provides a summary for top-level
@@ -37,15 +38,15 @@ public class Analyser {
 	 *             Thrown if the processing fails.
 	 */
 	public static void main(String[] args) throws Exception {
-		if (args.length != 1 && args.length != 3) {
-			err.println("Usage: java -cp bin rokclock.Analyser <logFilename> [<start date inclusive> <stop date exclusive>]");
+		if (args.length != 1 && args.length > 4) {
+			err.println("Usage: java -cp bin rokclock.Analyser <logFilename> [<start date inclusive> <stop date exclusive>] [-r]");
 			exit(1);
 		}
 		String logFilename = args[0];
 		Date fromDate = null, toDate = null;
 		String dfS = "dd/MM/yyyy";
 		DateFormat df = new SimpleDateFormat(dfS);
-		if (3 <= args.length)
+		if (3 <= args.length) {
 			try {
 				fromDate = df.parse(args[1]);
 				toDate = df.parse(args[2]);
@@ -53,9 +54,10 @@ public class Analyser {
 				err.println("Dates should be specified in the following format: " + dfS);
 				exit(1);
 			}
-			Analyser a = new Analyser();
-			a.processLogFile(logFilename, fromDate, toDate);
-			a.displayResults(false);
+		}
+		Analyser a = new Analyser();
+		a.processLogFile(logFilename, fromDate, toDate);
+		a.displayResults(Arrays.asList(args).contains("-r"));
 	}
 
 	/**
@@ -175,7 +177,10 @@ public class Analyser {
 			String projectPath = entry.getKey();
 			long sum = entry.getValue();
 			double sumInHours = 1.0 * sum / factor;
-			out.printf("%s, %.2f, %s" + nl, team, sumInHours, projectPath);
+			if (relative)
+				out.printf("%s, %d%%, %s" + nl, team, Math.round(sumInHours * 100), projectPath);
+			else
+				out.printf("%s, %.2f, %s" + nl, team, sumInHours, projectPath);
 		}
 	}
 
